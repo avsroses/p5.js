@@ -5,8 +5,9 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   //object - (variable name : value , )
   disk = { x: width / 2, y: height / 2, d: 40, vx: 5, vy: 5 }
+
+  //logic function
   disk.update = function () {
-    //logic
     this.x += this.vx;
     this.y += this.vy;
     //radius
@@ -20,12 +21,17 @@ function setup() {
       this.vy = -this.vy;
     }
   }
+
+  //draw function
+  disk.draw = function() {
+    circle(this.x, this.y, this.d);
+  }
 }
 
 function draw() {
   background(220);
-  //call function in setup()
+  //call update function in setup()
   disk.update();
-  //draw
-  circle(disk.x, disk.y, disk.d);
+  //call draw function is setup()
+  disk.draw();
 }

@@ -1,3 +1,4 @@
+//global variables
 let disk;
 let disk2;
 let disk3;
@@ -5,7 +6,7 @@ let disk4;
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-
+  //each Disk needs these three values for the contrsuctor function
   disk = new Disk(width/2, height/2, 150);
 
   disk2 = new Disk(width/2, height/2, 150);
@@ -16,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-  background(220, 10);
+  background(220, 15);
   //disk1
   disk.draw();
   disk.update();

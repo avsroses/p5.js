@@ -4,24 +4,28 @@ let disk;
 function setup() {
   createCanvas(innerWidth, innerHeight);
   //object - (variable name : value , )
-  disk = {x:width/2, y:height/2, d:40, vx:5, vy:5}
+  disk = { x: width / 2, y: height / 2, d: 40, vx: 5, vy: 5 }
+  disk.update = function () {
+    //logic
+    this.x += this.vx;
+    this.y += this.vy;
+    //radius
+    let r = this.d / 2;
+    //won't go off x
+    if (this.x < 0 + r || this.x > width - r) {
+      this.vx = -this.vx;
+    }
+    //won't go off y
+    if (this.y < 0 + r || this.y > height - r) {
+      this.vy = -this.vy;
+    }
+  }
 }
 
 function draw() {
   background(220);
-  //logic
-  disk.x += disk.vx;
-  disk.y += disk.vy;
-  //radius
-  let r = disk.d/2;
-  //won't go off x
-  if(disk.x < 0 + r || disk.x > width - r) {
-    disk.vx = -disk.vx;
-  }
-  //won't go off y
-  if(disk.y < 0 + r || disk.y > height - r) {
-    disk.vy = -disk.vy;
-  }
+  //call function in setup()
+  disk.update();
   //draw
   circle(disk.x, disk.y, disk.d);
 }

@@ -16,10 +16,13 @@ function draw() {
   //logic
   x += vx;
   y += vy;
+  //radius
   let r = d/2;
+  //won't go off x
   if(x < 0 + r || x > width - r) {
     vx = -vx;
   }
+  //won't go off y
   if(y < 0 + r || y > height - r) {
     vy = -vy;
   }

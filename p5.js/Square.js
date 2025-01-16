@@ -2,6 +2,7 @@ class Square extends Shape{
 
     constructor(x, y, d) {
         super(x,y,d)
+        //variables specific to square
         this.rotation = 10;
         angleMode(DEGREES);
         rectMode(CENTER);
@@ -19,6 +20,7 @@ class Square extends Shape{
 
     update() {
         super.update();
+        //variable specific to square
         this.rotation+=5;
     }
 }

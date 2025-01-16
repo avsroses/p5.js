@@ -1,4 +1,4 @@
-class Square extends Shape{
+class Shape {
 
     constructor(x, y, d) {
         this.x = x;
@@ -7,19 +7,6 @@ class Square extends Shape{
         this.vx = random(-10, 10);
         this.vy = random(-10, 10);
         this.colour = color(random(255), random(255), random(255));
-        this.rotation = 10;
-        angleMode(DEGREES);
-        rectMode(CENTER);
-    }
-
-    draw() {
-        fill(this.colour);
-        strokeWeight(0);
-        push();
-        translate(this.x, this.y);
-        rotate(this.rotation);
-        square(0, 0, this.d);
-        pop();
     }
 
     update() {
@@ -35,6 +22,5 @@ class Square extends Shape{
         if (this.y < 0 + r || this.y > height - r) {
             this.vy = -this.vy;
         }
-        this.rotation+=5;
     }
 }

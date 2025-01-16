@@ -4,9 +4,11 @@ let disk2;
 let disk3;
 let disk4;
 
+let mySquare;
+
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  //each Disk needs these three values for the contrsuctor function
+  //each Disk needs three values for the contrsuctor function
   disk = new Disk(width/2, height/2, 150);
 
   disk2 = new Disk(width/2, height/2, 150);
@@ -14,6 +16,8 @@ function setup() {
   disk3 = new Disk(width/2, height/2, 150);
 
   disk4 = new Disk(width/2, height/2, 150);
+
+  mySquare = new Square(width/2, height/2, 150);
 }
 
 function draw() {
@@ -30,4 +34,7 @@ function draw() {
   //disk4
   disk4.draw();
   disk4.update();
+
+  mySquare.draw();
+  mySquare.update();
 }

@@ -5,6 +5,7 @@ class Square {
     vx;
     vy;
     colour;
+
     constructor(x, y, d) {
         this.x = x;
         this.y = y;
@@ -23,14 +24,12 @@ class Square {
     update() {
         this.x += this.vx;
         this.y += this.vy;
-        //radius
-        let r = this.d / 2;
         //won't go off x
-        if (this.x < 0 + r || this.x > width - r) {
+        if (this.x < 0 || this.x > width - this.d) {
             this.vx = -this.vx;
         }
         //won't go off y
-        if (this.y < 0 + r || this.y > height - r) {
+        if (this.y < 0 || this.y > height - this.d) {
             this.vy = -this.vy;
         }
     }

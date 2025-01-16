@@ -1,16 +1,11 @@
 class Disk {
-    x;
-    y;
-    d;
-    vx;
-    vy;
-    colour;
+
     constructor(x, y, d) {
         this.x = x;
         this.y = y;
         this.d = d;
-        this.vx = random(-10, 10);
-        this.vy = random(-10, 10);
+        this.vx = random(-5, 5);
+        this.vy = random(-5, 5);
         this.colour = color(random(255), random(255), random(255));
     }
 
